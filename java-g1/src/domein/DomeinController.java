@@ -6,10 +6,14 @@ public class DomeinController {
 
 	private OverzichtTypeRepository overzichtTypeRepos;
 	private OverzichtFactory oz;
+        
+        public DomeinController(){
+            overzichtTypeRepos = new OverzichtTypeRepository();
+            oz = new OverzichtFactory();
+        }
 
 	public List<Overzichttype> geefOverzicht() {
-		// TODO - implement DomeinController.geefOverzicht
-		throw new UnsupportedOperationException();
+		return overzichtTypeRepos.geefOverzichttypes();
 	}
 
 	/**
@@ -18,8 +22,7 @@ public class DomeinController {
      * @return 
 	 */
 	public List<?> maakOverzicht(Overzichttype oz) {
-		// TODO - implement DomeinController.maakOverzicht
-		throw new UnsupportedOperationException();
+		return this.oz.ontwikkelOverzicht(oz);
 	}
 
 }

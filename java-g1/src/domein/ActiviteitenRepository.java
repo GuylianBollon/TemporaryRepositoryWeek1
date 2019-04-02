@@ -1,15 +1,18 @@
 package domein;
 
 import java.util.*;
+import persistentie.SessieMapper;
 
 public class ActiviteitenRepository implements Overzicht {
+        private SessieMapper sm;
 
-	private Collection<Sessie> sessies;
+    public ActiviteitenRepository() {
+        sm = new SessieMapper();
+    }
 
         @Override
 	public List<Sessie> getOverzichten() {
-		// TODO - implement ActiviteitenRepository.getOverzichten
-		throw new UnsupportedOperationException();
+		return sm.geefSessies();
 	}
 
 }

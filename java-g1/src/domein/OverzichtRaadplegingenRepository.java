@@ -1,15 +1,19 @@
 package domein;
 
 import java.util.*;
+import persistentie.OverzichtRaadplegingenMapper;
 
 public class OverzichtRaadplegingenRepository implements Overzicht {
+        private OverzichtRaadplegingenMapper orm;
 
-	private Collection<Raadpleging> raadpleging;
+    public OverzichtRaadplegingenRepository() {
+        orm = new OverzichtRaadplegingenMapper();
+    }
 
+        
         @Override
-	public List<Raadpleging> getOverzichten() {
-		// TODO - implement OverzichtRaadplegingenRepository.getOverzichten
-		throw new UnsupportedOperationException();
+	public List<PrototypeRaadpleging> getOverzichten() {
+		return orm.geefAlleOverzichtenVanRaadplegingen();
 	}
 
 }

@@ -1,15 +1,20 @@
 package domein;
 
 import java.util.*;
+import persistentie.LedenMapper;
 
 public class InschrijvingenRepository implements Overzicht {
 
-	private Collection<Lid> leden;
+        private LedenMapper lm;
+
+    public InschrijvingenRepository() {
+        lm = new LedenMapper();
+    }
+        
 
         @Override
 	public List<Lid> getOverzichten() {
-		// TODO - implement InschrijvingenRepository.getOverzichten
-		throw new UnsupportedOperationException();
+		return lm.geefAlleLeden();
 	}
 
 }
